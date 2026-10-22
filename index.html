@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suziee Corner</title>
+<meta name="description" content="Suziee Corner — portfolio of Nguyễn Hoàng Thảo Vy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@800&family=Barlow:wght@400;500&family=Barlow+Semi+Condensed:wght@800&family=Big+Shoulders+Display:wght@600;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Noto+Sans+KR:wght@400;600;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="loader" aria-hidden="true"><div class="loader-seal"><svg viewBox="0 0 120 120"><rect x="6" y="6" width="108" height="108" rx="26"/><rect x="16" y="16" width="88" height="88" rx="18"/></svg><span>S</span></div><p class="loader-txt">Suziee Corner</p></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<canvas class="paint" id="paint" aria-hidden="true"></canvas>
+<button class="music" id="music" aria-pressed="false" aria-label="Music"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="music-lbl" id="musicLbl">♪</span></button>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#home" aria-label="Suziee Corner"><span class="seal" aria-hidden="true"><span>S</span></span><b>Suziee Corner</b></a>
+    <ul class="menu" id="menu">
+      <li><a href="#about" data-i18n="nav.about"></a></li>
+      <li><a href="#projects" data-i18n="nav.projects"></a></li>
+      <li><a href="#conducts" data-i18n="nav.conducts"></a></li>
+      <li><a href="#business" data-i18n="nav.business"></a></li>
+      <li><a href="#experience" data-i18n="nav.experience"></a></li>
+      <li><a href="#contact" data-i18n="nav.contact"></a></li>
+    </ul>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="vi" aria-pressed="false">VI</button><button data-lang="en" aria-pressed="false">EN</button><button data-lang="ko" aria-pressed="false">KO</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Light / dark">
+        <span class="knob"><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HOME -->
+  <div class="page" data-page="home">
+    <section class="cover" id="cover" aria-label="Suziee Corner 2027 — Creative Portfolio">
+      <div class="cv-layer cv-l1"><div class="cv-corner" aria-hidden="true"><span style="--i:0">C</span><span style="--i:1">O</span><span style="--i:2">R</span><span style="--i:3">N</span><span style="--i:4">E</span><span style="--i:5">R</span></div></div>
+      <div class="cv-layer cv-l2"><h1 class="cv-suziee"><span class="sr-only">Suziee Corner</span><span aria-hidden="true"><span style="--i:0">S</span><span style="--i:1">U</span><span style="--i:2">Z</span><span style="--i:3">I</span><span style="--i:4">E</span><span style="--i:5">E</span></span></h1></div>
+      <div class="cv-layer cv-l3"><img class="cv-person" src="img/cover-person.png" alt="Nguyễn Hoàng Thảo Vy" width="540" height="720"></div>
+      <div class="cv-layer cv-l4">
+        <div class="cv-year" id="cvYear">2027</div>
+        <div class="cv-stars cv-stars-l" aria-hidden="true"><span class="cv-star">✦</span><span class="cv-star">✦</span><span class="cv-star">✦</span><span class="cv-star">✦</span></div>
+        <div class="cv-cp">Creative Portfolio</div>
+        <div class="cv-name">NGUYỄN HOÀNG THẢO VY</div>
+        <div class="cv-dash" aria-hidden="true"></div>
+        <div class="cv-para"><p data-i18n="cover.p"></p></div>
+        <div class="cv-stars cv-stars-r" aria-hidden="true"><span class="cv-star">✦</span><span class="cv-star">✦</span><span class="cv-star">✦</span><span class="cv-star">✦</span></div>
+      </div>
+    </section>
+    <div class="cover-after wrap"><p class="cover-para-m" data-i18n="cover.p"></p>
+      <div class="cta"><a class="btn fill" href="#projects" data-i18n="hero.cta1"></a><a class="btn" href="#about">About Me</a><a class="btn" href="#contact" data-i18n="hero.cta2"></a></div></div>
+    <div class="ribbons" aria-hidden="true">
+      <div class="ribbon r2"><div class="ribbon-track" id="rib2"></div></div>
+      <div class="ribbon r1"><div class="ribbon-track" id="rib1"></div></div>
+    </div>
+    <div class="strip" id="strip"></div>
+    <section class="wrap home-sec feat">
+      <h2 class="display sec-title" data-i18n="home.featured"></h2>
+      <div class="rows" id="featuredRows"></div>
+    </section>
+    <section class="wrap home-sec" style="padding-bottom:40px">
+      <h2 class="display sec-title" data-i18n="home.explore"></h2>
+      <ul class="index" id="hub"></ul>
+    </section>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="page" data-page="about" hidden>
+    <section class="slide-sec"><h1 class="sr-only">Introduction — About Me</h1><img class="slide" src="img/slide-intro.jpg" srcset="img/slide-intro-sm.jpg 1000w, img/slide-intro.jpg 1920w" sizes="100vw" width="1920" height="964" alt="Introduction"><div class="sr-only" id="introText"></div></section>
+    <section class="slide-sec"><img class="slide" src="img/slide-about.jpg" srcset="img/slide-about-sm.jpg 1000w, img/slide-about.jpg 1920w" sizes="100vw" width="1920" height="964" alt="About me — Suziee"><ul class="sr-only" id="mottos"></ul></section>
+    <section class="page-block"><div class="wrap">
+      <div class="profile">
+        <figure class="portrait cutout" style="margin:0"><img src="img/about-portrait.jpg" alt="Nguyễn Hoàng Thảo Vy"><span class="mono">Suziee · Lily Nguyễn</span></figure>
+        <ul class="contact-info profile-info" id="profileInfo"></ul>
+      </div>
+      <h2 class="display sec-title"><span data-i18n="ach.title"></span></h2>
+      <div class="gpa" id="gpa"></div>
+      <div class="ach-filters" id="achFilters"></div>
+      <ol class="ach" id="ach"></ol>
+      <div class="ach-more"><button class="btn" id="achMore"></button></div>
+      <h2 class="display sec-title" style="margin-top:64px" data-i18n="cert.title"></h2>
+      <ul class="certs" id="certs"></ul>
+      <div class="next-page"><span class="mono" data-i18n="ui.next"></span><a class="display" href="#projects"><span data-i18n="nav.projects"></span> →</a></div>
+    </div></section>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="page" data-page="projects" hidden><section class="page-block"><div class="wrap">
+    <div class="page-head"><p class="label mono"><svg class="lotus" viewBox="0 0 24 24"><use href="#lotus"/></svg><span data-i18n="projects.tag"></span></p><h1 class="display"><span class="uline" data-i18n="nav.projects"></span></h1><p data-i18n="projects.sub"></p></div>
+    <div class="filters" role="toolbar" aria-label="Filter" id="filters"></div>
+    <div class="rows" id="projRows"></div>
+    <div class="next-page"><span class="mono" data-i18n="ui.next"></span><a class="display" href="#conducts"><span data-i18n="nav.conducts"></span> →</a></div>
+  </div></section></div>
+
+  <!-- CONDUCTS -->
+  <div class="page" data-page="conducts" hidden><section class="page-block"><div class="wrap">
+    <div class="page-head"><p class="label mono"><svg class="lotus" viewBox="0 0 24 24"><use href="#lotus"/></svg><span data-i18n="conducts.tag"></span></p><h1 class="display"><span class="uline" data-i18n="nav.conducts"></span></h1><p data-i18n="conducts.sub"></p></div>
+    <p class="display quote-big" data-i18n="c1.q"></p>
+    <div class="principles" id="principles"></div>
+    <div class="next-page"><span class="mono" data-i18n="ui.next"></span><a class="display" href="#business"><span data-i18n="nav.business"></span> →</a></div>
+  </div></section></div>
+
+  <!-- OWN BUSINESS -->
+  <div class="page" data-page="business" hidden><section class="page-block"><div class="wrap">
+    <div class="page-head"><p class="label mono"><svg class="lotus" viewBox="0 0 24 24"><use href="#lotus"/></svg><span data-i18n="biz.tag"></span></p><h1 class="display"><span class="uline" data-i18n="nav.business"></span></h1><p data-i18n="biz.sub2"></p></div>
+    <div class="biz-grid" id="bizGrid"></div>
+    <div class="next-page"><span class="mono" data-i18n="ui.next"></span><a class="display" href="#experience"><span data-i18n="nav.experience"></span> →</a></div>
+  </div></section></div>
+
+  <!-- EXPERIENCE -->
+  <div class="page" data-page="experience" hidden><section class="page-block"><div class="wrap">
+    <div class="page-head"><p class="label mono"><svg class="lotus" viewBox="0 0 24 24"><use href="#lotus"/></svg><span data-i18n="exp.tag"></span></p><h1 class="display"><span class="uline" data-i18n="nav.experience"></span></h1><p data-i18n="exp.sub"></p></div>
+    <div class="tl" id="timeline"></div>
+    <div class="next-page"><span class="mono" data-i18n="ui.next"></span><a class="display" href="#blog"><span data-i18n="nav.blog"></span> →</a></div>
+  </div></section></div>
+
+  <!-- BLOG -->
+  <div class="page" data-page="blog" hidden><section class="page-block"><div class="wrap">
+    <div class="page-head"><p class="label mono"><svg class="lotus" viewBox="0 0 24 24"><use href="#lotus"/></svg><span data-i18n="blog.tag"></span></p><h1 class="display"><span class="uline" data-i18n="nav.blog"></span></h1><p data-i18n="blog.sub"></p></div>
+    <div class="posts" id="blogList"></div>
+    <div class="next-page"><span class="mono" data-i18n="ui.next"></span><a class="display" href="#docs"><span data-i18n="nav.docs"></span> →</a></div>
+  </div></section></div>
+
+  <!-- DOCS -->
+  <div class="page" data-page="docs" hidden><section class="page-block"><div class="wrap">
+    <div class="page-head"><p class="label mono"><svg class="lotus" viewBox="0 0 24 24"><use href="#lotus"/></svg><span data-i18n="docs.tag"></span></p><h1 class="display"><span class="uline" data-i18n="nav.docs"></span></h1><p data-i18n="docs.sub"></p></div>
+    <div id="docsAll"></div>
+    <p class="docs-note" data-i18n="docs.note"></p>
+    <div class="next-page"><span class="mono" data-i18n="ui.next"></span><a class="display" href="#contact"><span data-i18n="nav.contact"></span> →</a></div>
+  </div></section></div>
+
+  <!-- CONTACT -->
+  <div class="page" data-page="contact" hidden>
+    <section class="slide-sec contact-slide"><h1 class="sr-only">Contact me</h1>
+      <div class="slide-wrap">
+        <img class="slide" src="img/slide-contact.jpg" srcset="img/slide-contact-sm.jpg 1000w, img/slide-contact.jpg 1920w" sizes="100vw" width="1920" height="964" alt="Contact me — 0773076302 · anhsang.vercel.app · nthaozy126@gmail.com">
+        <a class="hot" style="left:32%;top:54%;width:15.5%;height:6.6%" href="tel:0773076302" aria-label="0773 076 302"></a>
+        <a class="hot" style="left:32%;top:64.6%;width:27.5%;height:6.6%" href="https://anhsang.vercel.app/" target="_blank" rel="noopener" aria-label="anhsang.vercel.app"></a>
+        <a class="hot" style="left:32%;top:75.2%;width:23.5%;height:6.6%" href="mailto:nthaozy126@gmail.com" aria-label="nthaozy126@gmail.com"></a>
+      </div>
+    </section>
+    <section class="contact-actions"><div class="wrap ca-row">
+      <div class="ca"><span class="mono">Phone</span><b style="user-select:all">0773 076 302</b></div>
+      <div class="ca"><span class="mono">Email</span><b><code id="mailAddr">nthaozy126@gmail.com</code></b><button type="button" class="btn plain" id="copyMail" data-i18n="ui.copy"></button></div>
+      <div class="ca"><span class="mono">Website</span><a class="btn fill" href="https://anhsang.vercel.app/" target="_blank" rel="noopener">anhsang.vercel.app ↗</a></div>
+    </div></section>
+  </div>
+</main>
+
+<footer>
+  <div class="fret" aria-hidden="true"></div>
+  <div class="wrap foot">
+    <div class="display giant">Suziee<br>Corner</div>
+    <div class="foot-links">
+      <span class="mono">A little corner for big ideas</span>
+      <span data-i18n="foot.copy"></span>
+      <a href="#docs" class="mono" data-i18n="nav.docs"></a>
+      <a href="#home" class="mono" data-i18n="foot.home"></a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="modal" id="modal" aria-labelledby="mTitle">
+  <div class="m-head"><button class="m-close" id="mClose" aria-label="Close">×</button></div>
+  <div class="m-content" id="mContent"></div>
+</dialog>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lotus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3c3 4 3 9.5 0 13.5C9 12.5 9 7 12 3z"/><path d="M12 16.5C8 16.5 4 14 3 9c4 0 8 3 9 7.5z"/><path d="M12 16.5c4 0 8-2.5 9-7.5-4 0-8 3-9 7.5z"/><path d="M5 20h14"/></symbol>
+</svg>
+<script src="script.js"></script>
+</body>
+</html>
