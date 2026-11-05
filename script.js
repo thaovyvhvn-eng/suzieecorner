@@ -500,7 +500,7 @@ const BUSINESSES = [
       <div class="stats"><div class="stat"><b>~1M</b><span>${L({vi:'đồng doanh thu mỗi tháng',en:'VND revenue per month',ko:'동, 월 매출'})}</span></div><div class="stat"><b>3</b><span>${L({vi:'kênh bán hàng',en:'sales channels',ko:'판매 채널'})}</span></div></div>
       <div class="m-cols"><div><h4>${L({vi:'Kênh bán',en:'Where I sold',ko:'판매처'})}</h4><ul>${li(L({vi:['Nhà sách kế bên trường','Các bạn cùng khối','Facebook'],en:['The bookshop next to school','Classmates in my grade','Facebook'],ko:['학교 옆 서점','같은 학년 친구들','페이스북']}))}</ul></div></div>
       <div class="m-gallery"><img src="img/biz-slime.jpg" alt="Slime" loading="lazy" style="aspect-ratio:3/4;max-width:420px"></div>`},
-  { id:'supplies', art:'brush',
+  { id:'supplies', img:'img/biz-supplies.jpg',
     when:{vi:'Lớp 6 – 7',en:'Grades 6–7',ko:'중1–2학년'}, title:{vi:'Hoạ cụ online',en:'Online art supplies',ko:'온라인 미술 용품'},
     sum:{vi:'Kinh doanh hoạ cụ qua mạng: màu, cọ, giấy và dụng cụ vẽ.',en:'Sold art supplies online: paints, brushes, paper and drawing tools.',ko:'물감, 붓, 종이 등 미술 용품을 온라인으로 판매했습니다.'},
     fig:{vi:'30 triệu',en:'30M VND',ko:'3,000만 동'}, figNote:{vi:'tổng doanh thu đến khi ngừng bán',en:'total revenue until I stopped',ko:'판매 종료까지 총매출'},
@@ -508,7 +508,7 @@ const BUSINESSES = [
       ${head(L({vi:'Lớp 6 – 7',en:'Grades 6–7',ko:'중1–2학년'}),L({vi:'Hoạ cụ online',en:'Online art supplies',ko:'온라인 미술 용품'}))}
       <p class="lede">${L({vi:'Từ việc tự vẽ, mình chuyển sang bán hoạ cụ qua mạng cho người cùng sở thích. Cửa hàng đạt tổng doanh thu khoảng 30 triệu đồng cho tới khi mình ngừng bán.',en:'Painting led me to selling art supplies online to people who shared the hobby. The shop made about 30 million VND in total before I closed it.',ko:'그림을 그리다 보니 같은 취미를 가진 사람들에게 미술 용품을 온라인으로 팔게 되었습니다. 판매를 그만둘 때까지 총매출은 약 3,000만 동이었습니다.'})}</p>
       <div class="stats"><div class="stat"><b>30M</b><span>${L({vi:'đồng tổng doanh thu',en:'VND total revenue',ko:'동 총매출'})}</span></div></div>
-      <p class="note">${L({vi:'Hình ảnh cửa hàng sẽ được cập nhật sau.',en:'Shop photos will be added later.',ko:'매장 사진은 추후 업데이트됩니다.'})}</p>`},
+      <div class="m-gallery"><figure class="wide"><img src="img/biz-supplies.jpg" alt="${L({vi:'Hoạ cụ',en:'Art supplies',ko:'미술 용품'})}" loading="lazy" style="aspect-ratio:4/3"><figcaption class="mono">${L({vi:'Màu nước, bút màu, marker và cọ vẽ',en:'Watercolours, coloured pencils, markers and brushes',ko:'수채 물감, 색연필, 마커와 붓'})}</figcaption></figure></div>`},
   { id:'clay', img:'img/clay-stall.jpg',
     when:{vi:'Lớp 10',en:'Grade 10',ko:'고1'}, title:{vi:'Hoa đất sét',en:'Clay flowers',ko:'클레이 꽃'},
     sum:{vi:'Nặn hoa và thú đất sét, bó thành bó hoa để bán ở hội chợ và làm quà tặng thầy cô, bạn bè.',en:'Hand-made clay flowers and animals, wrapped into bouquets for a fair and as gifts for teachers and friends.',ko:'클레이로 꽃과 동물을 빚어 꽃다발로 만들어 축제에서 팔고, 선생님과 친구들에게 선물했습니다.'},
