@@ -489,6 +489,7 @@ function lightweaveDetail(){
     <div class="m-cols"><div><h4>${t('biz.awards')}</h4><ul>${AWARDS.map(a=>`<li><b>${L(a.h)}</b> — ${L(a.p)}</li>`).join('')}</ul></div></div>
     <div class="m-cols"><div><h4>${t('biz.reach')}</h4><p>${t('biz.reachTxt')}</p></div><div><ul style="list-style:none;padding:0"><li>Phone: <span style="user-select:all">0773 076 302</span></li><li>Email: <span style="user-select:all">nthaozy126@gmail.com</span></li><li>Facebook: Lily Nguyễn (Nguyễn Hoàng Thảo Vy)</li></ul></div></div>`;
 }
+const SUPPLY_PHOTOS = ['supplies-05','supplies-06','supplies-07','supplies-08','supplies-09','supplies-10','supplies-11','supplies-12','supplies-markers','supplies-tubes','supplies-pans','supplies-parcels'];
 const BUSINESSES = [
   { id:'slime', img:'img/biz-slime.jpg',
     when:{vi:'Lớp 4 – 5',en:'Grades 4–5',ko:'초등 4–5학년'}, title:'Slime & Squishy',
@@ -508,11 +509,9 @@ const BUSINESSES = [
       ${head(L({vi:'Lớp 6 – 7',en:'Grades 6–7',ko:'중1–2학년'}),L({vi:'Hoạ cụ online',en:'Online art supplies',ko:'온라인 미술 용품'}))}
       <p class="lede">${L({vi:'Từ việc tự vẽ, mình chuyển sang bán hoạ cụ qua mạng cho người cùng sở thích. Cửa hàng đạt tổng doanh thu khoảng 30 triệu đồng cho tới khi mình ngừng bán.',en:'Painting led me to selling art supplies online to people who shared the hobby. The shop made about 30 million VND in total before I closed it.',ko:'그림을 그리다 보니 같은 취미를 가진 사람들에게 미술 용품을 온라인으로 팔게 되었습니다. 판매를 그만둘 때까지 총매출은 약 3,000만 동이었습니다.'})}</p>
       <div class="stats"><div class="stat"><b>30M</b><span>${L({vi:'đồng tổng doanh thu',en:'VND total revenue',ko:'동 총매출'})}</span></div></div>
-      <div class="m-gallery"><figure class="wide"><img src="img/biz-supplies.jpg" alt="${L({vi:'Hoạ cụ',en:'Art supplies',ko:'미술 용품'})}" loading="lazy" style="aspect-ratio:4/3"><figcaption class="mono">${L({vi:'Màu nước, bút màu, marker và cọ vẽ',en:'Watercolours, coloured pencils, markers and brushes',ko:'수채 물감, 색연필, 마커와 붓'})}</figcaption></figure>
-        <figure><img src="img/supplies-markers.jpg" alt="" loading="lazy" style="aspect-ratio:3/4"><figcaption class="mono">${L({vi:'Marker và màu nước',en:'Markers and watercolour sets',ko:'마커와 수채 물감 세트'})}</figcaption></figure>
-        <figure><img src="img/supplies-tubes.jpg" alt="" loading="lazy" style="aspect-ratio:3/4"><figcaption class="mono">${L({vi:'Màu nước dạng tuýp',en:'Watercolour tubes',ko:'튜브 수채 물감'})}</figcaption></figure>
-        <figure><img src="img/supplies-pans.jpg" alt="" loading="lazy" style="aspect-ratio:4/3"><figcaption class="mono">${L({vi:'Bộ màu nước chiết hộp',en:'Hand-filled watercolour palettes',ko:'직접 소분한 수채 팔레트'})}</figcaption></figure>
-        <figure><img src="img/supplies-parcels.jpg" alt="" loading="lazy" style="aspect-ratio:3/4"><figcaption class="mono">${L({vi:'Đơn hàng chuẩn bị gửi đi',en:'Orders packed and ready to ship',ko:'발송 준비를 마친 주문'})}</figcaption></figure></div>`},
+      <div class="m-gallery"><figure class="wide"><img src="img/biz-supplies.jpg" alt="${L({vi:'Hoạ cụ',en:'Art supplies',ko:'미술 용품'})}" loading="lazy" style="aspect-ratio:4/3"><figcaption class="mono">${L({vi:'Màu nước, bút màu, marker và cọ vẽ',en:'Watercolours, coloured pencils, markers and brushes',ko:'수채 물감, 색연필, 마커와 붓'})}</figcaption></figure></div>
+      <h4 class="thumbs-h">${L({vi:'Hoạ cụ mình từng bán',en:'Supplies I sold',ko:'판매했던 미술 용품'})} <small class="mono">${L({vi:'· bấm để xem ảnh lớn',en:'· tap to enlarge',ko:'· 눌러서 크게 보기'})}</small></h4>
+      <div class="thumbs">${SUPPLY_PHOTOS.map((s,i)=>`<button class="thumb" data-zoom="${i}" aria-label="${L({vi:'Xem ảnh',en:'View photo',ko:'사진 보기'})} ${i+1}"><img src="img/${s}.jpg" alt="" loading="lazy"></button>`).join('')}</div>`},
   { id:'clay', img:'img/clay-stall.jpg',
     when:{vi:'Lớp 10',en:'Grade 10',ko:'고1'}, title:{vi:'Hoa đất sét',en:'Clay flowers',ko:'클레이 꽃'},
     sum:{vi:'Nặn hoa và thú đất sét, bó thành bó hoa để bán ở hội chợ và làm quà tặng thầy cô, bạn bè.',en:'Hand-made clay flowers and animals, wrapped into bouquets for a fair and as gifts for teachers and friends.',ko:'클레이로 꽃과 동물을 빚어 꽃다발로 만들어 축제에서 팔고, 선생님과 친구들에게 선물했습니다.'},
@@ -673,6 +672,17 @@ document.addEventListener('click', e => {
     openModal(() => `${head(esc(L(p.tag))+' · '+t('ui.soon'), esc(L(p.title)))}<article>${L(p.body)}</article><p class="note">${t('ui.preview')}</p>`); }
 });
 document.getElementById('mClose').addEventListener('click', closeModal);
+/* ---------- Photo zoom (supplies thumbnails) ---------- */
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+let lbIdx = 0;
+function lbShow(i){ lbIdx = (i + SUPPLY_PHOTOS.length) % SUPPLY_PHOTOS.length; lbImg.src = 'img/' + SUPPLY_PHOTOS[lbIdx] + '.jpg'; document.getElementById('lbCount').textContent = (lbIdx+1) + ' / ' + SUPPLY_PHOTOS.length; }
+document.addEventListener('click', e => { const z = e.target.closest('[data-zoom]'); if (!z) return; lbShow(+z.dataset.zoom); if (!lb.open) lb.showModal ? lb.showModal() : lb.setAttribute('open',''); });
+document.getElementById('lbPrev').addEventListener('click', () => lbShow(lbIdx - 1));
+document.getElementById('lbNext').addEventListener('click', () => lbShow(lbIdx + 1));
+document.getElementById('lbClose').addEventListener('click', () => lb.close());
+lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') lbShow(lbIdx - 1); if (e.key === 'ArrowRight') lbShow(lbIdx + 1); });
+
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 modal.addEventListener('close', () => { const v = modal.querySelector('video'); if (v) v.pause(); openState = null; });
 

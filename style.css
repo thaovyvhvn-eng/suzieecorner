@@ -545,3 +545,19 @@ form.contact label,.m-cols h4,.m-docs h4,.contact-info li b,.kind,.dsize{font-fa
   .rows{gap:64px}
 }
 @media (max-width:380px){ .lang button{padding:5px 6px} }
+
+/* supplies thumbnails + zoom */
+.thumbs-h{margin:22px 0 10px}
+.thumbs-h small{font-weight:400;color:var(--ink-soft);letter-spacing:.04em}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.thumb{padding:0;border:0;background:var(--paper-2);border-radius:12px;overflow:hidden;cursor:zoom-in;aspect-ratio:1;display:block}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease,filter .35s ease}
+.thumb:hover img,.thumb:focus-visible img{transform:scale(1.07);filter:saturate(1.15)}
+.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;overflow:visible}
+.lb::backdrop{background:rgba(24,8,12,.86);backdrop-filter:blur(3px)}
+.lb img{display:block;max-width:92vw;max-height:86vh;border-radius:14px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.lb-btn{position:fixed;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,243,196,.92);color:#5A0F14;font-size:28px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.lb-prev{left:max(12px,2vw)}.lb-next{right:max(12px,2vw)}
+.lb-x{top:max(16px,3vh);right:max(12px,2vw);transform:none;font-size:24px}
+.lb-count{position:fixed;bottom:max(14px,3vh);left:50%;transform:translateX(-50%);color:#FFF3C4;font-size:13px;letter-spacing:.1em}
+@media (max-width:600px){.thumbs{grid-template-columns:repeat(3,1fr)}.lb-btn{width:40px;height:40px;font-size:24px}}
